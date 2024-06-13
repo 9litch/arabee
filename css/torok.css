@@ -1,0 +1,749 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: "Poetsen One", "Noto Sans Arabic",sans-serif;
+}
+body {
+    text-align: right;
+    color: black;
+    width: 100vw;
+    background: linear-gradient(to top, #ffffff, #9500bb);
+}
+
+/* تنسيق شريط التنقل */
+nav {
+    padding: 0.4em;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* تثبيت الناف بار */
+    top: 0; /* تثبيت الناف بار في أعلى الصفحة */
+    width: 100%; /* لتغطية عرض الصفحة بالكامل */
+    z-index: 1000;
+    
+    transition: background-color 0.5s ease; /* انتقال سلس وبطيء */
+
+}
+
+nav img {
+    width: 150px; /* تكبير حجم الشعار */
+    padding-top: 20px;
+    padding-right: 8vw;
+}
+
+/* تنسيق القائمة الأساسية */
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 10vw;
+}
+
+.navbar li {
+    margin-left: 70px;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.navbar li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* تنسيق القائمة الفرعية */
+.sub-menu {
+    direction: ltr;
+    display: none;
+    position: absolute;
+    list-style: none;
+    left: 19vw; /* تحديد موقع القائمة الفرعية على اليسار */
+    top: 12vh; /* تحديد موقع القائمة الفرعية أسفل عنصر "دوراتنا" */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    width: 200px;
+    text-align: right;
+    transition: all 0.3s ease; /* تأثير انتقال سلس */
+}
+
+.navbar li:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    color: black;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 95%;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+.sub-menu li a{
+    text-align: center;
+}
+
+.sub-menu li:hover {
+    background-color: rgb(168, 168, 168);
+}
+
+.sub-menu li:active {
+    transform: scale(1);
+}
+.header {
+    position: relative;
+    height: 70vh; /* ضبط ارتفاع العنصر الرئيسي */
+}
+.header .text{
+    margin-top: 30vh;
+    margin-right: 15vw;
+    text-align: right;
+    direction: rtl;
+}
+
+.header .image {
+    margin-right: 50vw;
+    margin-top: -47vh;
+    position: relative; /* لضمان وضعها فوق الخلفية */
+    z-index: 2; /* تحديد ترتيبها فوق الصورة الخلفية */
+}
+
+#p {
+    position: absolute;
+    top: -10vh;
+    left: 18vw;
+    z-index: 1; /* تحديد ترتيبها خلف الصورة الأمامية */
+    animation: scaleAnimation 5s infinite; /* تطبيق التحريك */
+}
+
+@keyframes scaleAnimation {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+.body{
+    height: 80vh;
+}
+.body .image{
+    margin-right: 10vw;
+}
+.body h1{
+    direction: rtl;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+.body .righttext{
+    position: relative;
+    direction: rtl;
+    margin-top: -22vw;
+    margin-right: 40vw;
+}
+.body .lefttext{
+    position: relative;
+    direction: rtl;
+    margin-right: 65vw;
+    margin-top: -24vh;
+}
+span{
+    font-size: 50px;
+    margin-left: 10px;
+}
+.mid h1 {
+    color: rgb(196, 196, 0);
+    font-size: 45px;
+}
+.mid h1 span{
+    font-size: 45px;
+}
+.mid p{
+    direction: rtl;
+    margin-bottom: 80px;
+}
+.mid{
+    text-align: center;
+}
+.mid .up{
+    margin-bottom: 10px;
+}
+.mid .up img,
+.dowen img {
+    padding: 10px;
+    transition: transform 2s; /* إضافة التحويل ببطء */
+}
+
+.mid .up:hover img,
+.dowen:hover img {
+    transform: scale(1.05); /* تكبير الصورة عند تقريب الفأرة */
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.about h1{
+    margin-top: 60px;
+    color: #ffd900;
+    font-size: 40px;
+}
+
+.right-container, .left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.right-container{
+    margin-right: -60vw;
+    margin-top: 10vh;
+}
+.left-container{
+    margin-left: -50vw;
+    margin-top: -81.5vh;
+}
+.right, .left {
+    position: relative;
+    box-shadow: 0 0 10px rgb(90, 85, 85);
+    width: 35vw;
+    height: 240px;
+    margin-bottom: 10vh;
+    border-radius: 50px;
+}
+
+.right {
+    align-self: flex-end;
+    margin-right: 10vw;
+}
+.right p ,.left p {
+    text-align: right;
+    direction: rtl;
+    font-size: 12px;
+    margin-top: 0px;
+    padding-right: 40px;
+    margin-bottom: 14px;
+}
+.right h3 ,.left h3{
+    margin-top: 8vh ;
+    text-align: right;
+    padding-right: 40px;
+
+}
+.left {
+    align-self: flex-start;
+    margin-left: 10vw;
+}
+
+.about img {
+    position: absolute;
+    width: 100px; /* حجم الصورة المناسب */
+    height:100px; /* حجم الصورة المناسب */
+    top: -35px; /* نصف الصورة يكون خارج العنصر */
+}
+
+.rightimg1 {
+    left: -25px;
+    margin-left:  28vw;
+}
+
+.leftimg1{
+    left: -25px;
+    margin-left: 28vw;
+} 
+.k{
+    direction: rtl;
+    text-align: center;
+    margin-bottom: 65px;
+    font-size: 25px;
+}
+.k h1{
+    color: #b89d00;
+}
+.vb{
+    display: flex;
+    justify-content: center;
+}
+.fot{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    box-sizing: border-box;
+}
+.l{
+    width: 27%;
+    height: 60vh;
+    box-shadow: 0 0 10px rgb(90, 85, 85);
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 20px; /* ضروري لوضع الصورة بشكل مطلق */
+}
+.l img {
+    top: -13%; /* النصف الأعلى من الصورة خارج الـ div */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+     /* يمكنك تعديل العرض بناءً على حجم الصورة المطلوب */
+}
+.l h3{
+    margin-top: 9vh;
+}
+.fot p{
+    direction: rtl;
+    margin-top: 5vh;
+}
+.g{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+.g img {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+
+}
+.footer{
+    height: 450px;
+    width: 100vw;
+    box-shadow: 0 0 10px rgb(90, 85, 85);
+
+}
+.footer .educat{
+    margin-top: 4vh;
+    margin-right: 25vw;
+}
+.footer .educat h4{
+    padding-top: 14vh;
+}
+.footer .concceting{
+    margin-top: -14vh;
+    margin-right: 60vw;
+    text-decoration: none;
+}
+.footer .concceting a{
+    cursor: pointer;
+    padding-top: 20px;
+    text-decoration: none;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding:1rem 0;
+    color: #000000;
+    font-variation-settings: 'wdth' 25;
+    text-align: center;
+}
+
+.footer .box-container .box a{
+    font-size: 1.3rem;
+    color:var(--light-color);
+    padding:1rem 0;
+    margin-left: 50px;
+    margin-top: -20px;
+    text-decoration: none;
+    margin-bottom: -20px;
+
+}
+
+.footer .box-container .box a i{
+    color:var(--green);
+    padding-right: .5rem;
+
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+
+.footer .share{
+    padding:1rem 0;
+    text-align: center;
+}
+
+.footer .share a{
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    color:#9c9ea7;
+
+    background:rgb(0, 0, 0);
+    margin:0 .3rem;
+    border-radius: 50%;
+    text-decoration: none;
+
+}
+
+.footer .share a:hover{
+    background-color: #4b0348;
+    color:#ff00cc ;
+}
+
+.footer .credit{
+    margin-top: -2rem;
+    margin-bottom: 1.5rem;
+    padding:0 1rem;
+    padding-top: 2.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ff00cc;
+}
+
+.footer .credit span{
+    color:black;
+    font-size: 1.7rem;
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+  
+    body {
+        text-align: right;
+        color: black;
+        width: 100%;
+    }
+    
+    /* تنسيق شريط التنقل */
+    nav {
+        padding: 0.4em;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed; /* تثبيت الناف بار */
+        top: 0; /* تثبيت الناف بار في أعلى الصفحة */
+        width: 100%; /* لتغطية عرض الصفحة بالكامل */
+        z-index: 1000;
+        transition: background-color .5s ease; /* انتقال سلس وبطيء */
+    
+    }
+    
+    nav img {
+        width: 100px; /* تكبير حجم الشعار */
+        padding-top: 20px;
+        padding-right: 8vw;
+    }
+    
+    /* تنسيق القائمة الأساسية */
+    .navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        margin-left: 0vw;
+    }
+    
+    .navbar li {
+        margin-left: 20px;
+        position: relative;
+        cursor: pointer;
+        
+    }
+    
+    .navbar li a {
+        display: block;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    /* تنسيق القائمة الفرعية */
+    .sub-menu {
+        direction: ltr;
+        display: none;
+        position: absolute;
+        list-style: none;
+        left: 9vw; /* تحديد موقع القائمة الفرعية على اليسار */
+        top: 9vh; /* تحديد موقع القائمة الفرعية أسفل عنصر "دوراتنا" */
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1000;
+        width: auto;
+        text-align: right;
+        transition: all 0.3s ease; /* تأثير انتقال سلس */
+    }
+    
+    .navbar li:hover .sub-menu {
+        display: block;
+    }
+    
+    .sub-menu li {
+        color: black;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 95%;
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    
+    }
+    .sub-menu li a{
+        text-align: center;
+    }
+    
+    .sub-menu li:hover {
+        background-color: rgb(168, 168, 168);
+    }
+    
+    .sub-menu li:active {
+        transform: scale(1);
+    }
+    
+    
+.header .text{
+    margin-top: 30vh;
+    margin-right: 15vw;
+    text-align: right;
+    direction: rtl;
+}
+
+.header .image {
+    width: 80%;
+    margin-right: 9vw;
+    margin-top: 0vh;
+    position: relative; /* لضمان وضعها فوق الخلفية */
+    z-index: 2; /* تحديد ترتيبها فوق الصورة الخلفية */
+}
+
+#p {
+    width: 60%;
+    position: absolute;
+    top: 37vh;
+    left: 20vw;
+    z-index: 1; /* تحديد ترتيبها خلف الصورة الأمامية */
+    animation: scaleAnimation 5s infinite; /* تطبيق التحريك */
+}
+
+.body{
+    height: 80vh;
+}
+.body .image{
+    margin-right: 3vw;
+}
+.body h1{
+    direction: rtl;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 5vh;
+    margin-top: 10vh;
+    font-size: 20px;
+}
+.body .righttext{
+    position: relative;
+    direction: rtl;
+    margin-top: 5vw;
+    margin-right: 20vw;
+}
+.body .lefttext{
+    position: relative;
+    direction: rtl;
+    margin-right: 20vw;
+    margin-top: 0vh;
+}
+.mid{
+    margin-top: 30vh;
+}
+span{
+    font-size: 15px;
+    margin-left: 10px;
+}
+.mid h1 {
+    color: rgb(196, 196, 0);
+    font-size: 25px;
+}
+.mid h1 span{
+    font-size: 45px;
+}
+.mid p{
+    direction: rtl;
+    margin-bottom: 80px;
+}
+.mid{
+    text-align: center;
+}
+.mid .up{
+    margin-bottom: 10px;
+}
+.mid .up img,
+.dowen img {
+    padding: 10px;
+    transition: transform 2s; /* إضافة التحويل ببطء */
+}
+
+.mid .up:hover img,
+.dowen:hover img {
+    transform: scale(1.05); /* تكبير الصورة عند تقريب الفأرة */
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.about h1{
+    margin-top: 60px;
+    color: #ffd900;
+    font-size: 25px;
+}
+
+.right-container, .left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+}
+
+.right-container{
+    margin-right: 0vw;
+    margin-top: 10vh;
+}
+.left-container{
+    margin-left: 0;
+    margin-top: 0;
+}
+.right {
+    position: relative;
+    box-shadow: 0 0 10px rgb(90, 85, 85);
+    width: 95%;
+    height: 300px;
+    margin-bottom: 10vh;
+    border-radius: 50px;
+}
+.left{
+    position: relative;
+    box-shadow: 0 0 10px rgb(90, 85, 85);
+    width: 95%;
+    height: 300px;
+    margin-bottom: 10vh;
+    border-radius: 50px;
+}
+.right {
+    align-self: flex-end;
+    margin-right: 2vw;
+}
+.right p ,.left p {
+    text-align: right;
+    direction: rtl;
+    font-size: 12px;
+    margin-top: 30px;
+    margin-left: 0;
+    padding-right: 40px;
+    margin-bottom: 14px;
+}
+.right h3 ,.left h3{
+    margin-top: 8vh ;
+    text-align: right;
+    padding-right: 40px;
+
+}
+.left {
+    align-self: flex-start;
+    margin-left: 2vw;
+}
+
+.about img {
+    position: absolute;
+    width: 100px; /* حجم الصورة المناسب */
+    height:100px; /* حجم الصورة المناسب */
+    top: -35px; /* نصف الصورة يكون خارج العنصر */
+}
+
+.rightimg1 {
+    left: -25px;
+    margin-left:  68vw;
+}
+
+.leftimg1{
+    left: -25px;
+    margin-left: 68vw;
+} 
+.k{
+    direction: rtl;
+    text-align: center;
+    margin-bottom: 65px;
+    font-size: 25px;
+}
+.k h1{
+    color: #b89d00;
+    font-size: 30px;
+}
+.vb{
+    display: flex;
+    justify-content: center;
+}
+.fot{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    box-sizing: border-box;
+}
+.l{
+    width:auto;
+    height: auto;
+    box-shadow: 0 0 10px rgb(90, 85, 85);
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 20px; /* ضروري لوضع الصورة بشكل مطلق */
+}
+.l img {
+    top: -10%; /* النصف الأعلى من الصورة خارج الـ div */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+     /* يمكنك تعديل العرض بناءً على حجم الصورة المطلوب */
+}
+.l h3{
+    margin-top: 9vh;
+}
+.fot p{
+    direction: rtl;
+    margin-top: 5vh;
+    font-size: 10px;
+}
+.g{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+.g img {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+
+}
+.footer{
+    height: 480px;
+    width: 100vw;
+    box-shadow: 0 0 10px rgb(90, 85, 85);
+
+}
+}    

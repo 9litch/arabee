@@ -1,0 +1,586 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: "Poetsen One", "Noto Sans Arabic",sans-serif;
+}
+body {
+    text-align: right;
+    color: black;
+    width: 100vw;
+    margin-top: 10vh;
+    background: linear-gradient(to bottom, #ffffff, #9fb4fa);
+}
+
+/* تنسيق شريط التنقل */
+nav {
+    padding: 0.4em;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* تثبيت الناف بار */
+    top: 0; /* تثبيت الناف بار في أعلى الصفحة */
+    width: 100%; /* لتغطية عرض الصفحة بالكامل */
+    z-index: 1000;
+    
+    transition: background-color 0.5s ease; /* انتقال سلس وبطيء */
+
+}
+
+nav img {
+    width: 150px; /* تكبير حجم الشعار */
+    padding-top: 20px;
+    padding-right: 8vw;
+}
+
+/* تنسيق القائمة الأساسية */
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 10vw;
+}
+
+.navbar li {
+    margin-left: 70px;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.navbar li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* تنسيق القائمة الفرعية */
+.sub-menu {
+    direction: ltr;
+    display: none;
+    position: absolute;
+    list-style: none;
+    left: 19vw; /* تحديد موقع القائمة الفرعية على اليسار */
+    top: 12vh; /* تحديد موقع القائمة الفرعية أسفل عنصر "دوراتنا" */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    width: 200px;
+    text-align: right;
+    transition: all 0.3s ease; /* تأثير انتقال سلس */
+}
+
+.navbar li:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    color: black;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 95%;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+.sub-menu li a{
+    text-align: center;
+}
+
+.sub-menu li:hover {
+    background-color: rgb(168, 168, 168);
+}
+
+.sub-menu li:active {
+    transform: scale(1);
+}
+.im img{
+    width: 100%;
+    height: 600px;
+    margin-top: 13px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    height: 60vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.video-description {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.video-container {
+    flex: 2;
+height: 30%;
+position: relative;
+padding-top: 56.25%; /* نسبة عرض إلى ارتفاع 16:9 */
+border-radius: 90px;
+margin-left: -20vw;
+    cursor: pointer;
+}
+.video-container img {
+    position: absolute;
+top: 3vh;
+right: 90px;
+width: 48%;
+height: 32%;
+border-radius: 90px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 500;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.popup iframe {
+    width: 100%;
+    height: 450px;
+}
+.description {
+    flex: 1;
+padding: 20px;
+height: 20vh;
+text-align: center;
+direction: rtl;
+margin-top: 10vh;
+width: 20vw; 
+margin-right: auto;
+float: left;
+}
+.descriptionl {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    direction: rtl;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10vh;
+}
+@media (min-width: 768px) {
+    .video-description {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .video-container {
+        width: 48%;
+    }
+    .description {
+        width: 48%;
+    }
+} 
+.containerl {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85vw;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.video-descriptionl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.video-containerl {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    cursor: pointer;
+}
+.video-containerl img {
+    width: 90%;
+    border-radius: 90px;
+}
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 500;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.popup iframe {
+    width: 100%;
+    height: 450px;
+}
+.descriptionl {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    direction: rtl;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20vh;
+}
+@media (min-width: 768px) {
+    .video-descriptionl {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .video-containerl {
+        width: 48%;
+    }
+    .descriptionl {
+        width: 48%;
+    }
+}
+
+.footer{
+    height: 450px;
+    width: 100vw;
+    box-shadow: 0 0 10px rgb(90, 85, 85);
+
+}
+.footer .educat{
+    margin-top: 4vh;
+    margin-right: 25vw;
+}
+.footer .educat h4{
+    padding-top: 14vh;
+}
+.footer .concceting{
+    margin-top: -14vh;
+    margin-right: 60vw;
+    text-decoration: none;
+}
+.footer .concceting a{
+    cursor: pointer;
+    padding-top: 20px;
+    text-decoration: none;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding:1rem 0;
+    color: #000000;
+    font-variation-settings: 'wdth' 25;
+    text-align: center;
+}
+
+.footer .box-container .box a{
+    font-size: 1.3rem;
+    color:var(--light-color);
+    padding:1rem 0;
+    margin-left: 50px;
+    margin-top: -20px;
+    text-decoration: none;
+    margin-bottom: -20px;
+
+}
+
+.footer .box-container .box a i{
+    color:var(--green);
+    padding-right: .5rem;
+
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+
+.footer .share{
+    padding:1rem 0;
+    text-align: center;
+}
+
+.footer .share a{
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    color:#9c9ea7;
+
+    background:rgb(0, 0, 0);
+    margin:0 .3rem;
+    border-radius: 50%;
+    text-decoration: none;
+
+}
+
+.footer .share a:hover{
+    background-color: #241313;
+}
+
+.footer .credit{
+    margin-top: -2rem;
+    margin-bottom: 1.5rem;
+    padding:0 1rem;
+    padding-top: 2.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer .credit span{
+    color:black;
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+  
+    body {
+        text-align: right;
+        color: black;
+        width: 100%;
+        background: linear-gradient(to bottom, #ffffff, #9fb4fa);
+    }
+    
+    /* تنسيق شريط التنقل */
+    nav {
+        padding: 0.4em;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed; /* تثبيت الناف بار */
+        top: 0; /* تثبيت الناف بار في أعلى الصفحة */
+        width: 100%; /* لتغطية عرض الصفحة بالكامل */
+        z-index: 1000;
+        transition: background-color .5s ease; /* انتقال سلس وبطيء */
+    
+    }
+    
+    nav img {
+        width: 100px; /* تكبير حجم الشعار */
+        padding-top: 20px;
+        padding-right: 8vw;
+    }
+    
+    /* تنسيق القائمة الأساسية */
+    .navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        margin-left: 0vw;
+    }
+    
+    .navbar li {
+        margin-left: 20px;
+        position: relative;
+        cursor: pointer;
+        
+    }
+    
+    .navbar li a {
+        display: block;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    /* تنسيق القائمة الفرعية */
+    .sub-menu {
+        direction: ltr;
+        display: none;
+        position: absolute;
+        list-style: none;
+        left: 9vw; /* تحديد موقع القائمة الفرعية على اليسار */
+        top: 9vh; /* تحديد موقع القائمة الفرعية أسفل عنصر "دوراتنا" */
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1000;
+        width: auto;
+        text-align: right;
+        transition: all 0.3s ease; /* تأثير انتقال سلس */
+    }
+    
+    .navbar li:hover .sub-menu {
+        display: block;
+    }
+    
+    .sub-menu li {
+        color: black;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 95%;
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    
+    }
+    .sub-menu li a{
+        text-align: center;
+    }
+    
+    .sub-menu li:hover {
+        background-color: rgb(168, 168, 168);
+    }
+    
+    .sub-menu li:active {
+        transform: scale(1);
+    }
+    
+    
+    .content{
+        padding-top: 80px; /* لإعطاء مساحة تحت الناف بار الثابت */
+    }
+    .footer{
+        height: 490px;
+        width: 100vw;
+        box-shadow: 0 0 10px rgb(90, 85, 85);
+    
+    }
+    .container {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5vh;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        border-radius: 10px;
+    }
+    .video-description {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 16%;
+    }
+    .video-container {
+        flex: 2;
+    position: relative;
+    padding-top: 56.25%; /* نسبة عرض إلى ارتفاع 16:9 */
+    border-radius: 90px;
+    margin-left: -20vw;
+        cursor: pointer;
+    }
+    .video-container img {
+        position: absolute;
+    top: 3vh;
+    right: 90px;
+    width: 80%;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 500;
+    }
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 800px;
+        background: #000;
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 1000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .popup iframe {
+        width: 100%;
+        height: 450px;
+    }
+    .description {
+        flex: 1;
+    padding: 20px;
+    text-align: center;
+    direction: rtl;
+    width: 20vw; 
+    margin-right: 0vw;
+    }
+  
+    .containerl {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5vh;
+        margin-left: auto;
+        margin-right: auto;
+        width: 85vw;
+        height: auto;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .video-descriptionl {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .video-containerl {
+        flex: 1;
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: 20px;
+        cursor: pointer;
+    }
+    .video-containerl img {
+        width: 90%;
+        border-radius: 90px;
+    }
+}    

@@ -1,0 +1,404 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: "Poetsen One", "Noto Sans Arabic",sans-serif;
+}
+body {
+    text-align: right;
+    color: black;
+    width: 100vw;
+    background: linear-gradient(to bottom, #ffffff, #f5008f);
+}
+
+/* تنسيق شريط التنقل */
+nav {
+    padding: 0.4em;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* تثبيت الناف بار */
+    top: 0; /* تثبيت الناف بار في أعلى الصفحة */
+    width: 100%; /* لتغطية عرض الصفحة بالكامل */
+    z-index: 1000;
+    
+    transition: background-color 0.5s ease; /* انتقال سلس وبطيء */
+
+}
+
+nav img {
+    width: 150px; /* تكبير حجم الشعار */
+    padding-top: 20px;
+    padding-right: 8vw;
+}
+
+/* تنسيق القائمة الأساسية */
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 10vw;
+}
+
+.navbar li {
+    margin-left: 70px;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.navbar li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* تنسيق القائمة الفرعية */
+.sub-menu {
+    direction: ltr;
+    display: none;
+    position: absolute;
+    list-style: none;
+    left: 19vw; /* تحديد موقع القائمة الفرعية على اليسار */
+    top: 12vh; /* تحديد موقع القائمة الفرعية أسفل عنصر "دوراتنا" */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    width: 200px;
+    text-align: right;
+    transition: all 0.3s ease; /* تأثير انتقال سلس */
+}
+
+.navbar li:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    color: black;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 95%;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+.sub-menu li a{
+    text-align: center;
+}
+
+.sub-menu li:hover {
+    background-color: rgb(168, 168, 168);
+}
+
+.sub-menu li:active {
+    transform: scale(1);
+}
+
+.header .text{
+    margin-top: 30vh;
+    margin-right: 15vw;
+}
+.header .image{
+    margin-right: 45vw;
+    margin-top: -47vh;
+}
+.t{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15vh;
+}
+
+.container {
+    width: 80%;
+    margin: 100px auto;
+    max-width: 1200px;
+    text-align: right;
+    direction: rtl;
+    height: 90vh;
+}
+.form-title {
+    text-align: right;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+.form-title span {
+    color: #f5a623;
+}
+.contact-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    text-align: right;
+}
+.contact-form .form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 1em;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    height: 70px;
+}
+.contact-form .half-width {
+    width: calc(48% - 10px);
+}
+.contact-form .full-width {
+    width: calc(100% - 0px);
+}
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    background-color: #f5a623;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 45px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.contact-form button:hover {
+    background-color: #de8911;
+}
+
+.footer{
+    height: 450px;
+    width: 100vw;
+    box-shadow: 0 0 10px rgb(90, 85, 85);
+
+}
+.footer .educat{
+    margin-top: 4vh;
+    margin-right: 25vw;
+}
+.footer .educat h4{
+    padding-top: 14vh;
+}
+.footer .concceting{
+    margin-top: -14vh;
+    margin-right: 60vw;
+    text-decoration: none;
+}
+.footer .concceting a{
+    cursor: pointer;
+    padding-top: 20px;
+    text-decoration: none;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding:1rem 0;
+    color: #000000;
+    font-variation-settings: 'wdth' 25;
+    text-align: center;
+}
+
+.footer .box-container .box a{
+    font-size: 1.3rem;
+    color:var(--light-color);
+    padding:1rem 0;
+    margin-left: 50px;
+    margin-top: -20px;
+    text-decoration: none;
+    margin-bottom: -20px;
+
+}
+
+.footer .box-container .box a i{
+    color:var(--green);
+    padding-right: .5rem;
+
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+
+.footer .share{
+    padding:1rem 0;
+    text-align: center;
+}
+
+.footer .share a{
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    color:#9c9ea7;
+
+    background:rgb(0, 0, 0);
+    margin:0 .3rem;
+    border-radius: 50%;
+    text-decoration: none;
+
+}
+
+.footer .share a:hover{
+    background-color: #241313;
+}
+
+.footer .credit{
+    margin-top: -2rem;
+    margin-bottom: 1.5rem;
+    padding:0 1rem;
+    padding-top: 2.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer .credit span{
+    color:black;
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+  
+    body {
+        text-align: right;
+        color: black;
+        width: 100%;
+    }
+    
+    /* تنسيق شريط التنقل */
+    nav {
+        padding: 0.4em;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed; /* تثبيت الناف بار */
+        top: 0; /* تثبيت الناف بار في أعلى الصفحة */
+        width: 100%; /* لتغطية عرض الصفحة بالكامل */
+        z-index: 1000;
+        transition: background-color .5s ease; /* انتقال سلس وبطيء */
+    
+    }
+    
+    nav img {
+        width: 100px; /* تكبير حجم الشعار */
+        padding-top: 20px;
+        padding-right: 8vw;
+    }
+    
+    /* تنسيق القائمة الأساسية */
+    .navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        margin-left: 0vw;
+    }
+    
+    .navbar li {
+        margin-left: 20px;
+        position: relative;
+        cursor: pointer;
+        
+    }
+    
+    .navbar li a {
+        display: block;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    /* تنسيق القائمة الفرعية */
+    .sub-menu {
+        direction: ltr;
+        display: none;
+        position: absolute;
+        list-style: none;
+        left: 9vw; /* تحديد موقع القائمة الفرعية على اليسار */
+        top: 9vh; /* تحديد موقع القائمة الفرعية أسفل عنصر "دوراتنا" */
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1000;
+        width: auto;
+        text-align: right;
+        transition: all 0.3s ease; /* تأثير انتقال سلس */
+    }
+    
+    .navbar li:hover .sub-menu {
+        display: block;
+    }
+    
+    .sub-menu li {
+        color: black;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 95%;
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    
+    }
+    .sub-menu li a{
+        text-align: center;
+    }
+    
+    .sub-menu li:hover {
+        background-color: rgb(168, 168, 168);
+    }
+    
+    .sub-menu li:active {
+        transform: scale(1);
+    }
+    
+    
+    .content{
+        padding-top: 80px; /* لإعطاء مساحة تحت الناف بار الثابت */
+    }
+    .footer{
+        height: 490px;
+        width: 100vw;
+        box-shadow: 0 0 10px rgb(90, 85, 85);
+    
+    }
+    
+.header .text{
+    margin-top: 20vh;
+    margin-right: 15vw;
+}
+.header .image{
+    margin-right: 45vw;
+    margin-top: 0vh;
+    width: 90%;
+}
+
+.t{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15vh;
+}
+
+}
